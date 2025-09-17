@@ -67,8 +67,7 @@
 						<div class="inner">
 							<section>
 								<h2>Get in touch</h2>
-								<form method="post" action="send-email.php">
-									<input type="hidden" name="redirect" value="accounting.html" />
+								<form method="post" action="#">
 									<div class="fields">
 										<div class="field half">
 											<input type="text" name="name" id="name" placeholder="Name" />
@@ -86,7 +85,7 @@
 									</form>
 							</section>
 							<section>
-								<h2>Follow</h2>
+								<h2>Connect</h2>
 								<ul class="icons">
 									<li><a href="https://www.instagram.com/balancepointconsulting?igsh=MTZ0M3Vwdmh5OHl0aQ==" class="icon brands style2 fa-instagram"><span class="label">Instagram</span></a></li>
 									<li><a href="mailto:info@balancepointconsulting.llc" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
@@ -106,21 +105,7 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-			<script>
-			(function(){
-				var params = new URLSearchParams(window.location.search);
-				if (!params.has('success')) return;
-				var form = document.querySelector('form[action="send-email.php"]');
-				if (!form) return;
-				var msg = document.createElement('div');
-				if (params.get('success') === '1') {
-					msg.textContent = 'Thank you — your message was sent.';
-				} else {
-					msg.textContent = 'Sorry — there was a problem sending your message.';
-				}
-				form.parentNode.insertBefore(msg, form);
-			})();
-			</script>
+			
 			
 
 	</body>
