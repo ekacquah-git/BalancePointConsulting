@@ -173,6 +173,27 @@ s
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+		
+			<script>
+			(function(){
+				var params = new URLSearchParams(window.location.search);
+				if (!params.has('success')) return;
+				var form = document.querySelector('form[action="send-email.php"]');
+				if (!form) return;
+				var msg = document.createElement('div');
+				if (params.get('success') === '1') {
+					msg.textContent = 'Thank you — your message was sent.';
+					msg.className = 'contact-feedback success';
+				} else {
+					msg.textContent = 'Sorry — there was a problem sending your message.';
+					msg.className = 'contact-feedback error';
+				}
+				form.parentNode.insertBefore(msg, form);
+				if (history && history.replaceState) {
+					history.replaceState({}, document.title, window.location.pathname + window.location.hash);
+				}
+			})();
+			</script>
 
-	</body>
-</html>
+		</body>
+		</html>
